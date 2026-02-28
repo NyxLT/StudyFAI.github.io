@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>EduSite Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h2>Dashboard</h2>
+</header>
+
+<div class="container">
+
+    <!-- Quiz Creator -->
+    <div class="card">
+        <h3>Create Quiz</h3>
+        <input type="text" placeholder="Question">
+        <input type="text" placeholder="Answer">
+        <button>Create Quiz</button>
+    </div>
+
+    <!-- Flashcard Creator -->
+    <div class="card">
+        <h3>Create Flashcard</h3>
+        <input type="text" id="front" placeholder="Front Text">
+        <input type="text" id="back" placeholder="Back Text">
+        <button onclick="createFlashcard()">Add Flashcard</button>
+
+        <div id="flashcards"></div>
+    </div>
+
+    <!-- AI Summary -->
+    <div class="card">
+        <h3>AI Summary</h3>
+        <textarea placeholder="Paste notes here..."></textarea>
+        <button>Generate Summary</button>
+    </div>
+
+    <!-- Notes -->
+    <div class="card">
+        <h3>Notes</h3>
+        <textarea placeholder="Write your notes here..."></textarea>
+        <button>Save Notes</button>
+    </div>
+
+</div>
+
+<script>
+function createFlashcard() {
+    let front = document.getElementById("front").value;
+    let back = document.getElementById("back").value;
+
+    let card = document.createElement("div");
+    card.className = "flashcard";
+    card.innerText = front;
+
+    card.onclick = function() {
+        card.innerText = card.innerText === front ? back : front;
+    };
+
+    document.getElementById("flashcards").appendChild(card);
+}
+</script>
+
+</body>
+</html>

@@ -1,27 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Login - EduSite</title>
+    <title>EduSite - Login</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>EduSite Login</header>
+<header>
+    <h2>EduSite Login</h2>
+</header>
 
 <div class="container">
     <div class="card">
-        <h2>Login</h2>
+        <h3>Login</h3>
         <input type="text" placeholder="Username">
         <input type="password" placeholder="Password">
-        <button onclick="login()">Login</button>
+        <button onclick="location.href='dashboard.html'">Login</button>
     </div>
-</div>
 
-<script>
-function login() {
-    window.location.href = "dashboard.html";
-}
-</script>
+    <div class="card">
+        <h3>Sign Up</h3>
+        <input type="text" placeholder="Create Username">
+        <input type="password" placeholder="Create Password">
+        <button>Sign Up</button>
+    </div>
+
+    <br>
+    <a href="info.html">About This Website</a>
+</div>
 
 </body>
 </html>
